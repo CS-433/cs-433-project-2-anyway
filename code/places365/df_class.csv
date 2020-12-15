@@ -1,0 +1,19 @@
+,class,names,idxes,detected_building,probility,reason_unsaved
+0,garage/outdoor,\gsv_1523.jpg,157,0,0.0,no building detected
+1,parking_garage/outdoor,\gsv_1522.jpg,256,0,0.0,prob less than threshold
+2,manufactured_home,\gsv_1521.jpg,221,0,0.0,no building detected
+3,driveway,\gsv_1517.jpg,127,0,0.0,no building detected
+4,highway,\gsv_1516.jpg,175,0,0.0,no building detected
+5,parking_lot,\gsv_1515.jpg,257,0,0.0,no building detected
+6,highway,\gsv_1514.jpg,175,0,0.0,no building detected
+7,industrial_area,\gsv_1513.jpg,192,0,0.0,no building detected
+8,manufactured_home,\gsv_1512.jpg,221,0,0.0,no building detected
+9,driveway,\gsv_1511.jpg,127,0,0.0,no building detected
+10,tree_farm,\gsv_1510.jpg,338,0,0.0,no building detected
+11,forest_road,\gsv_1509.jpg,152,0,0.0,no building detected
+12,parking_lot,\gsv_1508.jpg,257,0,0.0,no building detected
+13,manufactured_home,\gsv_1507.jpg,221,0,0.0,no building detected
+14,parking_lot,\gsv_1506.jpg,257,0,0.0,no building detected
+15,driveway,\gsv_1505.jpg,127,0,0.0,no building detected
+16,library/outdoor,\gsv_1504.jpg,213,1,tensor(0.1688),None
+17,manufactured_home,\gsv_1503.jpg,221,0,0.0,no building detected

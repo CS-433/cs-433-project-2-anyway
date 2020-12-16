@@ -45,7 +45,7 @@ Attention! This model can only be run with the help of Cuda. Please feel free to
 
 ## pix2pix model(folder "pix2pix")
 
-## working with pix2pix model
+#### working with pix2pix model
 This part is using the pix2pix model to predict the images we get after the data filtering process. When applying the original trained model, the result of prediction is not good because the original datasets are from the city and there are not too many backgrounds. Also, there are 12 classes in the original model, and in this project, we only need four(background, facade, opening, cover). 
 So we did several steps to make some improvements to this model. 
 - First, we merge the 12 colors into 4 and tested both the original dataset and our new dataset. What we get at this point is the predicted data with only 4 colors, but still, the trees and roads(some interfere) are still recognized as facades. 
@@ -53,7 +53,7 @@ So we did several steps to make some improvements to this model.
 - The last step, we put these 70 images along with the 400 original images into the training datasets. And retrain it for the second time. Then get our new results.
 - Also, according to the new results' performance, we have revised the training datasets to get better results.
 
-## code for model pix2pix
+#### code for model pix2pix
 - the pix2pix folder contains a readme file that is written by the original author, and the specific information about this model is in that readme file.
 
 - The jupyter notebook "facades_baseline" contains all steps to train and to test. Tips, it is better to train the model on Colab. 

@@ -55,5 +55,5 @@ After that, we put these 70 images along with the 400 original images into the t
 - we revised the util.py and visualizer.py in folder "util" 
 
 
-##Thanks
+## Thanks
 Upon the completion of our project, we would like to express our gratitude to the host lab IMAC and our mentors Mr. Alireza Khodaverdian and Mr. Saeed for their guide and help.

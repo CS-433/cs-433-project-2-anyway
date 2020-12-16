@@ -53,6 +53,7 @@ After that, we put these 70 images along with the 400 original images into the t
 - the pix2pix folder contains a readme file that is written by the original author, and the specific information about this model is in that readme file.
 
 - we revised the util.py and visualizer.py in folder "util" 
-##Thanks
 
+
+##Thanks
 Upon the completion of our project, we would like to express our gratitude to the host lab IMAC and our mentors Mr. Alireza Khodaverdian and Mr. Saeed for their guide and help.

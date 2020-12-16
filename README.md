@@ -16,7 +16,7 @@ This folder is used for grabbing data from Google Street-View API. In the make_d
 This part is commented on in the function img_to_db. And when using this part, please comment on the part for downloading only one picture per location.
 After trying with a small dataset, we picked the best heading and pitch, then use this parameter to download to the whole dataset.
 
-- Examples on how to use 
+- Examples of how to use 
 Examples for using this is in the Jupyter Notebooks downloading picture.
 
 - Can't run it directly!!!!!
@@ -25,6 +25,24 @@ In this project, our shapefile is provided by the lab, and it is a secret docume
 But in the Unlable folder, we provided a few pictures which are downloaded from google. And in this project, we downloaded around 6000 pictures.
 
 ## Filter the images(folder "Data Filtering")
+
+In this part, we used three kinds of methods to detect buildings, green areas, and cars respectively.
+
+#### place365 model
+First of all, the code in the modeling folder is used. This model is a CNNs based pre-trained model, named the place365 model, which can detect where the is image taken, according to the contents in images.
+The pre-trained model contains a text file, describing 365 places it can detect. The place contains indoors and outdoors place together. Therefore, we select several desired outside locations in a .csv file. Then we used this kind of model to detect the place of images, if the place is contained by the .cvs file, the image is regarded as desired outside building, store it. While if the building is not on the list, we store it in another file.   The example is in file demo and the source code has already been functionalized in model_test.py.
+One more thing about model_test.py, the directory needs to be changed when the function is run.
+
+#### green detection model
+The second model we used is a pure computer version based model, which use the cv2 library as a toolbox to detect images.
+As it is seen in images, there are many images contain a large part of plants like trees and grass. Apparently, these kinds of images are not suitable for further process, and they should be filtered.
+In our code, we used the cv2 library to detect the ratio of green, which would mean plants like grass and plant most of the time. A threshold is set in the code. Every time we process one image, code would output the ratio of it. If it is larger than the threshold delete it, Otherwise keep it.
+The kept ones and filtered ones will be stored in different directories.
+
+#### SSD model
+The model is an Nvidia object detection model. It uses the SSD model to detect objects in images. As we know, the SSD model can detect 80 classes, such as a car, human, and vase. Due to the location of our model, only a small part of these classes will exist in our image, of which car is the most frequently appear one. Therefore, we set the car as our detect object. In this model, a set of labels and probabilities are output, and we select the label car and its probability as judge threshold. Here, we set another threshold and filter the images according to it.
+Attention! This model can only be run with the help of Cuda. Please feel free to change the target object. Many other objects might exist in the images as well, like the person, etc., in other scenarios. You can change it according to the class number, which can be seen in the variable class.
+
 
 ## pix2pix model
 This part is using the pix2pix model to predict the images we get after the data filtering process. When applying the original trained model, the result of prediction is not good because the original datasets are from the city and there are not too many backgrounds.
@@ -36,4 +54,5 @@ After that, we put these 70 images along with the 400 original images into the t
 
 - we revised the util.py and visualizer.py in folder "util" 
 ##Thanks
-We really appreciate for the host lab IMAC and our mentor Mr.Alireza Khodaverdian and Mr.Saeed. They gave us a lot of help
+
+Upon the completion of our project, we would like to express our gratitude to the host lab IMAC and our mentors Mr. Alireza Khodaverdian and Mr. Saeed for their guide and help.

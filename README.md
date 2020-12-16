@@ -62,5 +62,7 @@ So we did several steps to make some improvements to this model.
 
 - In the dataset folder, there are three folders(train, test, val), we actually have 470 pictures in train dataset, 104 pictures in val and around 2100 pictures in test. For convenience, we only provide a few samples.
 
+- There are also a pair of pre-trained models which are in the folder checkpoints.
+
 ## Thanks
 Upon the completion of our project, we would like to express our gratitude to the host lab IMAC and our mentors Mr. Alireza Khodaverdian and Mr. Saeed for their guide and help.

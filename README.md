@@ -1,5 +1,5 @@
 ## Title
-Facades and Opening Detection Based on Different Deep Learning Models
+Facades and Openings Detection Based on Different Deep Learning Models
 ## Authors
 Authors: Xiaorang Guo, Qunyou Liu and Yiwen Ma
 

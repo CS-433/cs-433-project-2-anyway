@@ -40,7 +40,7 @@ In our code, we used the cv2 library to detect the ratio of green area which usu
 
 #### car detection
 The filter is based on a Nvidia object detection model. It uses the SSD model from PyTorch to detect objects in an image. As we know, the SSD model can detect more than 80 classes, such as a car, human, and so on. A set of labels and its corresponding probabilities would be reported by the model. We observe that there are some images in the folder 'detect_green_removed' still have some noise such as a big car which covers the facade. Thus, we applied the SSD model to our dataset and filter the image based on two critiria:
-1. If the car area ratio is greater than 0.12  and 2. the confidence of detection reported by the SSD model is larger than 70%
+1) If the car area ratio is greater than 0.12  and 2)the confidence of detection reported by the SSD model is larger than 70%
 The output images would be saved separately as before in two folders('detect_car_removed') and ('detect_car_retained')
 Attention! This model can only be run with the help of Cuda. Please feel free to change the target object. Many other objects might exist in the images as well, like the person, etc., in other scenarios. You can change it according to the class number, which can be seen in the variable class.
 

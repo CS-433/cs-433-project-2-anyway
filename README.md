@@ -1,7 +1,5 @@
-## Title
-Facades and Openings Detection Based on Different Deep Learning Models
-## Authors
-Authors: Xiaorang Guo, Qunyou Liu and Yiwen Ma
+# Facades and Openings Detection Based on Different Deep Learning Models
+### Authors: Xiaorang Guo, Qunyou Liu and Yiwen Ma
 
 ## Introduction
 Our project is mainly about detecting the facades and openings of the raw images grabbing from Google Street View. The work is mainly divided into three parts.
@@ -9,9 +7,8 @@ The first part is to grab the data from Google Street-View, and the main functio
 The second part is to use three methods to filter the raw images downloaded from google and make the first prediction with an SSD_facades model. Code for this part is in the folder "Data Filtering"
 The last part is to use the pix2pix model to detect the objects and make some improvements for this model. Code for this part is in folder "pix2pix"
 
-## Details for the three part
-
-## Downloading the images(folder "downloading data")
+## Contents
+### Downloading the images(folder "downloading data")
 This folder is used for grabbing data from Google Street-View API. In the make_dataset.py, we allow it to download 6 pictures per location， 3 for headings and 2 for pitches。
 This part is commented in the function img_to_db. Note: When using this part, please comment on the part for downloading to collect only one picture per location.
 After trying with a small dataset, we picked the best heading and pitch, then use this parameter to download to the whole dataset.
@@ -24,7 +21,7 @@ When using this downloading function, we need two things: the key to google stre
 We regret that we cannot provide the shape file for this project because it is privately provided by the lab.
 In the Unlable folder, we provided a few pictures which are downloaded from google. In this project, we downloaded around 6000 pictures.
 
-## Filter the images(folder "Data Filtering")
+### Filter the images(folder "Data Filtering")
 
 In this part, we designed three methods to filter the raw images: building detection, green area detection and car detection.
 
@@ -43,7 +40,7 @@ The filter is based on a Nvidia object detection model. It uses the SSD model fr
 The output images would be saved separately as before in two folders('detect_car_removed') and ('detect_car_retained')
 Attention! This model can only be run with the help of Cuda. Please feel free to change the target object. Many other objects might exist in the images as well, like the person, etc., in other scenarios. You can change it according to the class number, which can be seen in the variable class.
 
-## pix2pix model(folder "pix2pix")
+### pix2pix model(folder "pix2pix")
 
 #### working with pix2pix model
 In this part, we used the pix2pix model to make the building detection on the images we got after the data filtering process. When applying the pre-trained model, the result of prediction is not good because the building type of the ground truth dataset are  different the images from google street view. Also, almost all the training images contains only facade over the whole image area. They do not contain any background noise as the images we grabbed from the real world. 
